@@ -13,7 +13,7 @@ The first release published through CI rather than by hand — the packaged code
 
 - Automated releases with Trusted Publishing (OIDC, no API keys): `RubyGem - Release` (`rubygem--release.yml`, triggered by `ruby-v*` tags, `rubygems/release-gem@v1`) and `PyPI - Release` (`pypi--release.yml`, triggered by `python-v*` tags, split into a `build` job and a `publish` job bound to the `pypi` environment holding the only `id-token: write` grant).
 - Package icon (`assets/spreen-pr-icon.svg`): the origami falcon stooping from the branch tip into the golden merge across the falcon's-eye stone, now shown in the root README.
-- Ecosystem-scoped toolchain version files `RubyGem/.ruby-version` (4.0.6) and `PyPI/.python-version` (3.14.6), so each package pins its own runtime rather than inheriting the repository-root files.
+- Ecosystem-scoped toolchain version files `RubyGem/.ruby-version` (4.0.6) and `PyPI/.python-version` (3.14.7), so each package pins its own runtime rather than inheriting the repository-root files.
 
 ### 2. Changed
 
