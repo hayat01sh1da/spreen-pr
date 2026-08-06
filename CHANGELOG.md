@@ -5,7 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).  
 One repository hosts two packages, so releases are tagged per ecosystem (`ruby-vX.Y.Z` for the RubyGems gem, `python-vX.Y.Z` for the PyPI library).
 
-## 0.1.1
+## 0.1.2 - 2026-08-06
+
+A maintenance release for both packages — the `pr-title` CLI and the library behaviour are unchanged from 0.1.1.
+
+### 1. Changed
+
+- Development toolchain moved to CPython 3.14.7 (`PyPI/.python-version`) and the pinned development dependencies were refreshed (`RubyGem/Gemfile.lock`, `PyPI/requirements.lock`); Gemfile and Bundler moved 4.0.16 -> 4.0.18. Runtime dependencies are unchanged, and the published `requires-python` (`>= 3.10`) and `required_ruby_version` (`>= 3.4`) floors are untouched.
+- The per-ecosystem READMEs shipped inside the packages restate the refreshed toolchain versions.
+
+## 0.1.1 - 2026-07-21
 
 The first release published through CI rather than by hand — the packaged code is unchanged from 0.1.0, so upgrading is optional.
 
@@ -13,7 +22,7 @@ The first release published through CI rather than by hand — the packaged code
 
 - Automated releases with Trusted Publishing (OIDC, no API keys): `RubyGem - Release` (`rubygem--release.yml`, triggered by `ruby-v*` tags, `rubygems/release-gem@v1`) and `PyPI - Release` (`pypi--release.yml`, triggered by `python-v*` tags, split into a `build` job and a `publish` job bound to the `pypi` environment holding the only `id-token: write` grant).
 - Package icon (`assets/spreen-pr-icon.svg`): the origami falcon stooping from the branch tip into the golden merge across the falcon's-eye stone, now shown in the root README.
-- Ecosystem-scoped toolchain version files `RubyGem/.ruby-version` (4.0.6) and `PyPI/.python-version` (3.14.7), so each package pins its own runtime rather than inheriting the repository-root files.
+- Ecosystem-scoped toolchain version files `RubyGem/.ruby-version` (4.0.6) and `PyPI/.python-version` (3.14.6), so each package pins its own runtime rather than inheriting the repository-root files.
 
 ### 2. Changed
 
@@ -22,7 +31,7 @@ The first release published through CI rather than by hand — the packaged code
 - `.github/scripts/dependency_report.sh` labels ecosystems by registry name (`PyPI` / `RubyGems` / `npm`) instead of by package-manager binary (`pip` / `gem` / `pnpm`), matching the `RubyGem - *` / `PyPI - *` workflow naming.
 - Bumped the development dependency `concurrent-ruby` 1.3.7 → 1.3.8.
 
-## 0.1.0
+## 0.1.0 - 2026-07-18
 
 ### 1. Added
 
